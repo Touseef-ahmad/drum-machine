@@ -1,5 +1,9 @@
 import React from 'react';
-import Key from './drum/pad.jsx'
+import Key from './drum/pad.jsx';
+import './App.css';
+
+//bootstrap imports
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { SOUND_NAMES } from './sounds';
 const Keys =
   ["Q", "W", "E",
@@ -23,16 +27,34 @@ class App extends React.Component {
     }
     // else do nothing
   }
+
+  // display name of the sound being played on paragraph (p) with id display
   setDisplayText(char) {
     document.getElementById('display').innerHTML = SOUND_NAMES[char]
   }
   render() {
     return (
-      <div id="drum-machine">
-        <p id="display">
-
-        </p>
-        {Keys.map(key => <Key setDisplayText={this.setDisplayText} char={key} />)}
+      <div className="center row" id="drum-machine">
+        <div className="col-8">
+          <div className="row">
+            <Key setDisplayText={this.setDisplayText} char="Q" />
+            <Key setDisplayText={this.setDisplayText} char="W" />
+            <Key setDisplayText={this.setDisplayText} char="E" />
+          </div>
+          <div className="row">
+            <Key setDisplayText={this.setDisplayText} char="A" />
+            <Key setDisplayText={this.setDisplayText} char="S" />
+            <Key setDisplayText={this.setDisplayText} char="D" />
+          </div>
+          <div className="row">
+            <Key setDisplayText={this.setDisplayText} char="Z" />
+            <Key setDisplayText={this.setDisplayText} char="X" />
+            <Key setDisplayText={this.setDisplayText} char="C" />
+          </div>
+        </div>
+        <div className="col-4 align-self-center">
+          <p id="display">Press a key</p>
+        </div>
       </div>
     );
   }
