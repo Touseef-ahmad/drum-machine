@@ -19,7 +19,6 @@ class App extends React.Component {
     document.addEventListener("keydown", this.handleKeyPress);
   }
   animateButton(id){
-    console.log(id)
       $( `#${id}` ).animate({
         opacity: 0.1,
       }, 250, function() {
