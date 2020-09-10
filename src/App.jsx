@@ -34,8 +34,10 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="center row" id="drum-machine">
-        <div className="col-8">
+      <div className="row center" id="drum-machine">
+        <div className="col-12 col-sm-12 col-md-12 ">
+        <div className="row">
+        <div className="col-9 col-sm-9 col-md-9">
           <div className="row">
             <Key setDisplayText={this.setDisplayText} char="Q" />
             <Key setDisplayText={this.setDisplayText} char="W" />
@@ -52,8 +54,10 @@ class App extends React.Component {
             <Key setDisplayText={this.setDisplayText} char="C" />
           </div>
         </div>
-        <div className="col-4 align-self-center">
+        <div className="col-3 col-md-3 col-sm-3 align-self-center">
           <p id="display">Press a key</p>
+        </div>
+      </div>
         </div>
       </div>
     );

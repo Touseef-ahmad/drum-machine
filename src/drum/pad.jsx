@@ -13,7 +13,8 @@ export default class Key extends React.Component {
     render(){
       const char = this.props.char;
       return(
-        <button onClick={this.play} id={`${char}-button`} class="drum-pad">
+        <div className="col-md-4 col-sm-4 col-4">
+          <button onClick={this.play} id={`${char}-button`} class="drum-pad btn-block">
           <p>
           {char}
         </p>
@@ -24,6 +25,7 @@ export default class Key extends React.Component {
               <code>audio</code> element.
           </audio>
         </button>
+        </div>
       )
     }
   }
