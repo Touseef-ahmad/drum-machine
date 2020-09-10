@@ -1,7 +1,7 @@
 import React from 'react';
 import Key from './drum/pad.jsx';
 import './App.css';
-
+import $ from 'jquery';
 //bootstrap imports
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { SOUND_NAMES } from './sounds';
@@ -18,12 +18,25 @@ class App extends React.Component {
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyPress);
   }
+  animateButton(id){
+    console.log(id)
+      $( `#${id}` ).animate({
+        opacity: 0.1,
+      }, 250, function() {
+        // Animation complete.
+        $( `#${id}` ).animate({
+          opacity: 1,
+        }, 500);
+      });
+    
+  }
   handleKeyPress(event) {
     const char = String.fromCharCode(event.keyCode)
-
+    const button_id = `${char}-button`;
     // if key pressed is one of the 9 keys
     if (Keys.includes(char)) {
-      document.getElementById(`${char}-button`).click()
+      document.getElementById(button_id).click()
+      this.animateButton(button_id)
     }
     // else do nothing
   }

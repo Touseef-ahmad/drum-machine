@@ -9,7 +9,7 @@
   cursor: pointer;
   outline: none;
   color: #fff;
-  background-color: #6C6c6c;
+  background-color: #373636;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
@@ -21,4 +21,10 @@
   background-color: rgb(187, 179, 71);
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+.drum-pad{
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
